@@ -1,5 +1,5 @@
 
-<ion-view view-title="Nueva Reserva">
+<ion-view view-title="Nueva reserva">
   <ion-content>
   <ion-list>
 
@@ -9,7 +9,7 @@
 
   <label class="item item-input item-select">
     <div class="input-label">
-      Origen
+      Origen:
     </div>
     
     <select ng-model="origen"  ng-selected="origen"  ng-options="destino.nombre for destino in destinos" >
@@ -24,7 +24,7 @@
 
   <label class="item item-input item-select">
     <div class="input-label">
-      Destino
+      Destino:
     </div>
     
     <select ng-model="destino" ng-selected="destino"   ng-options="destino.nombre for destino in destinos" >
@@ -38,7 +38,7 @@
 
   <label class="item item-input item-select">
     <div class="input-label">
-      Vehiculo para 
+      Vehículo para: 
     </div>
     
     <select ng-model="pasajeros" >
@@ -64,7 +64,7 @@
 
 
   <label class="item item-input" >
-    <span class="input-label">Fecha de salida</span>
+    <span class="input-label">Fecha de salida:</span>
     <ionic-datepicker  input-obj="datepickerObject"  >
       <button class="button button-block button-positive item"> {{fechaSalida}} </button>
     </ionic-datepicker>
@@ -74,7 +74,7 @@
 
 
    <label class="item item-input">
-       <span class="input-label">Hora de salida</span>
+       <span class="input-label">Hora de salida:</span>
        <ionic-timepicker etime="slots.epochTime" format="slots.format" step="slots.step" callback="timePickerCallback">
          <button class="button button-block button-positive item">
            
