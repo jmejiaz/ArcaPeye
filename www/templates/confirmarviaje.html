@@ -1,0 +1,42 @@
+<ion-view view-title="Confirmar mi viaje">
+
+  <ion-content>
+
+<div class="list card">
+
+  <div class="item ">
+    <p>Origen: <h3>{{origen}}</h3></p>
+    <p>Destino: <h3>{{destino}}</h3></p>
+    
+    <p>fecha salida: <h3>{{fsalida | date: "MM-dd-yyyy HH:mm" }}</h3></p>
+    <p>{{sregreso}} <h3>{{fregreso | date: "MM-dd-yyyy HH:mm" }}</h3></p>
+  </div>
+
+  <div class="item item-body">
+   
+    <p>
+      El tiempo estimado de viaje es {{estimado}}, la distancia total es de {{distancia}}
+    </p>
+    <p>
+      El  costo estimado es {{costo | currency:undefined:0 }} pesos.
+    </p>
+    
+  </div>
+
+
+
+  <label class="item item-input">
+    <textarea placeholder="Commentarios" ng-model="comentarios"></textarea>
+  </label>
+<button class="button button-block button-positive"  ng-click="insertarviaje(comentarios)">
+  Confirmar Viaje
+</button>
+</div>
+
+</ion-list>
+  </ion-content>
+
+
+
+</ion-view>
+

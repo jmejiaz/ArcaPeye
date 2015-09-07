@@ -1,0 +1,29 @@
+<ion-view view-title="Datos personales">
+  <ion-content>
+  
+
+    <ion-list>
+
+    <div class="list list-inset"   class="wrapper">
+      <label class="item item-input">
+        <input type="text" placeholder="Nombre" name="name" ng-model="nombre">
+      </label>
+
+  
+
+   <label class="item item-input">
+    <input type="number" placeholder="telefono" name="telephone" ng-model="telefono">
+  </label>
+
+  <label class="item item-input">    
+    <input type="email" placeholder="Correo" name="email" ng-model="correo">
+  </label>
+
+  <button class="button button-block button-positive" 
+    ng-click="cotizar(correo,telefono,nombre)">
+    Cotizar
+  </button>
+</div>
+    </ion-list>
+  </ion-content>
+</ion-view>

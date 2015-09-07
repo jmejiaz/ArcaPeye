@@ -1,0 +1,59 @@
+<ion-view view-title="Vehiculo">
+  <ion-content>
+<div class="list card">
+
+  <img class="full-image"  src="{{carro.imagen}}">
+  </div>
+
+
+ 
+<div class="list card">
+  <div >
+   
+    <center>
+    Su conductor es: <h3 >{{carro.conductor}}</h3>
+    </center>
+  </div>
+ 
+ <div class="card">
+  <div class="item item-divider">
+    Informacion General:
+  </div>
+  <div class="item item-text-wrap">
+    <p>Marca: {{carro.marca}}</p>
+    <p>Modelo: {{carro.modelo}}</p>
+    <p>Capacidad maxima: {{carro.capacidad}} personas</p>
+    <p>Descripcion: {{carro.comentarios}}</p>
+  </div>
+  
+</div>
+
+     <div class="card">
+  <div class="item item-divider">
+    Este vehiculo cuenta con:
+  </div>
+  <div class="item item-text-wrap">
+    <p ng-show="vehiculo.aire!='0'">Aire acondicionado</p>
+    <p ng-show="vehiculo.video!='0'">Television</p>
+    <p ng-show="vehiculo.audio!='0'">Sonido de alta fidelidad</p>
+  </div>
+  
+</div>
+
+
+
+    
+
+<center>
+<button class="button button-positive" ng-click="confirmar()">
+  Continuar
+</button>
+</center>
+<br>
+
+</div>
+  </ion-content>
+
+
+
+</ion-view>

@@ -1,0 +1,104 @@
+<ion-view view-title="Mi viaje">
+  <ion-content>
+
+<div class="list card">
+
+  <div class="item item-avatar">
+    <p>Origen: {{origen}}</p>
+    <p>Destino: {{destino}}</p>
+    
+    <p>fecha salida: {{fecha_inicio| date: "MM-dd-yyyy HH:mm"}}</p>
+    <p>fecha regreso: {{fecha_fin| date: "MM-dd-yyyy HH:mm"}}</p>
+    <p>Capacidad: {{capacidad}}</p>
+    <p>Pasajeros registrados: {{registrados}}</p>
+  </div>
+
+  
+
+  
+    
+
+ <div ng-show="formVisibility">
+
+  
+ <center>
+
+
+  <ion-list>
+  
+  <div class="item item-divider">
+    Nuevo Pasajero
+  </div>
+   
+      <label class="item item-input">
+    <input type="text" placeholder="nombre"   ng-model="$parent.nuevopasajero.nombre">
+  </label>
+
+  <label class="item item-input">
+    <input type="text" placeholder="Identificacion"  ng-model="$parent.nuevopasajero.identificacion">
+  </label>
+  <br>
+  <div class="list">
+
+  <label class="item item-input item-select">
+    Grupo Sanguineo
+    <select ng-model="$parent.nuevopasajero.tps">
+      
+      <option>A-</option>
+      <option>A+</option>
+      <option>B-</option>
+      <option>B+</option>
+      <option>AB-</option>
+      <option>AB+</option>
+      <option>O-</option>
+      <option selected>O+</option>
+    </select>
+  </label>
+</div>
+
+  <label class="item item-input">
+    <input type="text" placeholder="Correo" ng-model="$parent.nuevopasajero.correo">
+  </label>
+  <br>
+  <button  ng-click="Save()"   class="button button-outline button-positive">
+  Guardar
+</button>
+
+
+</ion-list>
+    
+    </center>
+  </div>
+<br>
+
+
+
+
+  <center>
+  <button  ng-click="ShowForm()" ng-hide="formVisibility"  class="button button-outline button-positive">
+  Agreg. pasajero
+</button>
+</center>
+<br>
+
+
+<div class="list">
+
+ 
+<div  ng-repeat="pasajero in pasajeros"  class="item item-button-right">
+  Nombre: {{pasajero.nombre}} <br> Identificacion: {{pasajero.identificacion}} <br>Grupo Sanguineo: {{pasajero.tipo_sangre}} <br>  Correo: {{pasajero.correo}}
+  <button ng-click="Delete(pasajero.id)" class="button button-positive">
+      <i class="icon ion-close-round"></i>
+    </button>
+  </div>
+
+</div>
+</div>
+
+</ion-list>
+  </ion-content>
+
+
+
+</ion-view>
+

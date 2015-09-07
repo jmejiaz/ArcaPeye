@@ -1,0 +1,150 @@
+
+<ion-view view-title="Nueva Reserva">
+  <ion-content>
+  <ion-list>
+
+
+
+
+
+ <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Tiempo(horas) {{horas}}
+    </div>
+    
+    <select ng-model="horas" >
+     
+      <option value='1' >1</option>
+      <option value='2' >2</option>
+      <option value='3' >3</option>
+      <option value='4' >4</option>
+      <option value='5' >5</option>
+      <option value='6' >6</option>
+      <option value='7' >7</option>
+      <option value='8' >8</option>
+      <option value='9' >9</option>
+      <option value='10' >10</option>
+      <option value='11' >11</option>
+      <option value='12' >12</option>
+
+    
+    </select>
+  </label>
+</div>
+
+<li class="item item-toggle" >
+     Incluye Festivos
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="flagfestivos">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+
+<label class="item item-input">
+       <span class="input-label">Hora</span>
+       <ionic-timepicker etime="slots.epochTime" format="slots.format" step="slots.step" callback="timePickerCallback">
+         <button class="button button-block button-positive">
+           
+              {{hsalida | date:'HH:mm'}}
+           
+         </button>
+       </ionic-timepicker>
+     </label>
+
+
+
+    <label class="item item-input">
+  <span class="input-label">Fecha inicio</span>
+  <ionic-datepicker idate="currentDate" >
+    <button class="button button-block button-positive"> {{ currentDate | date:'dd - MMMM - yyyy' }} </button>
+</ionic-datepicker>
+</label>
+
+
+   
+ 
+<label class="item item-input" >
+  <span class="input-label">Fecha fin</span>
+    <ionic-datepicker idate="currentDate1" >
+    <button class="button button-block button-positive"> {{ currentDate1 | date:'dd - MMMM - yyyy' }} </button>
+</ionic-datepicker>
+</label>
+
+  
+   <li class="item item-toggle">
+     Lunes
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="flagLunes">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-toggle">
+     Martes
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="flagMartes">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-toggle">
+     Miercoles
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="flagMiercoles">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-toggle">
+     Jueves
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="flagJueves">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-toggle">
+     Viernes
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="flagViernes">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-toggle">
+     Sabado
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="flagSabado">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <li class="item item-toggle">
+     Domingo
+     <label class="toggle toggle-positive">
+       <input type="checkbox" ng-model="flagDomingo">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  <br>
+  <center>
+  <button   ng-click="reservas(currentDate,currentDate1,flagfestivos,flagLunes,flagMartes,flagMiercoles,flagJueves,flagViernes,flagSabado,flagDomingo,horas)" class="button button-outline button-positive">
+  Buscar Vehiculos
+</button>
+
+</center>
+</ion-list>
+  </ion-content>
+</ion-view>

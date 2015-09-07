@@ -1,0 +1,43 @@
+<ion-view view-title="Vehiculos disponibles">
+  <ion-content>
+  <ion-refresher
+    pulling-text="Hala para recargar..."
+    on-refresh="listarvehiculos()">
+  </ion-refresher>
+
+    <ion-list>
+    <ion-item ng-hide="nocar">
+      <h2>no se encontraron vehiculos disponibles</h2>
+
+
+      </ion-item>
+      <ion-item ng-repeat="vehiculo in vehiculos" >
+   <div ng-click="iraconfirmarviaje(vehiculo.placa)">
+
+    <a class="item item-thumbnail-left" href="#">
+      <img src={{vehiculo.imagen}}>
+      <h2>{{vehiculo.marca}}</h2>
+      <p>{{vehiculo.modelo}}</p>
+      <p>{{vehiculo.capacidad}} personas</p>
+      <p><i class="icon ion-monitor" ng-show="vehiculo.video!='0'" ></i>  <i class="icon ion-volume-high" ng-show="vehiculo.audio!='0'"></i>  <i class="icon ion-ios-snowy" ng-show="vehiculo.aire!='0'"></i></p>
+    </a>
+
+    
+
+</div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<ion-view view-title="Arca">
+  <ion-content>
+  
+
+    <ion-list>
+
+    <div class="list list-inset"   class="wrapper">
+  <label class="item item-input">
+    <input type="text" placeholder="Nombre" ng-model="nuevousuario.first_name">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Primer apellido" ng-model="nuevousuario.primer_apellido">
+  </label>
+  <label class="item item-input">
+    <input type="text" placeholder="Segundo apellido" ng-model="nuevousuario.segundo_apellido">
+  </label>
+  <label class="item item-input">
+    <input type="number" placeholder="Cedula" ng-model="nuevousuario.cedula">
+  </label>
+   <label class="item item-input">
+    <input type="number" placeholder="Celular" ng-model="nuevousuario.celular">
+  </label>
+  <label class="item item-input">
+    
+    <input type="email" placeholder="Correo" ng-model="nuevousuario.correo">
+  </label>
+  <label class="item item-input">
+    <input type="password" placeholder="Contraseña" ng-model="nuevousuario.contrasena">
+  </label>
+   <label class="item item-input">
+    <input type="password" placeholder="Contraseña de nuevo" ng-model="nuevousuario.contrasenaConfirmada">
+  </label>
+<button class="button button-block button-positive" ng-click="registrarme()">
+  Registrarme
+</button>
+</div>
+    </ion-list>
+  </ion-content>
+</ion-view>

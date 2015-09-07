@@ -1,0 +1,12 @@
+angular.module('ArcaUser.controllers',
+       ['ArcaUser.BookController',
+       'ArcaUser.AppController',
+       'ArcaUser.ConfirmarViajeController',
+       'ArcaUser.DetalleVehiculoController',      
+       'ArcaUser.DetalleViajeController',
+       'ArcaUser.ListaVehiculosController',
+       'ArcaUser.ListaViajesController',
+       'ArcaUser.RegistrarmeController',
+       'ArcaUser.InicioController',
+       'ArcaUser.DatosController',
+       'ArcaUser.ReservarTiempoController'])

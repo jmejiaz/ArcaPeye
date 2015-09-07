@@ -1,0 +1,101 @@
+
+<ion-view view-title="Nueva Reserva">
+  <ion-content>
+  <ion-list>
+
+
+
+  <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Origen
+    </div>
+    
+    <select ng-model="origen"  ng-selected="origen"  ng-options="destino.nombre for destino in destinos" >
+
+    
+    
+    </select>
+  </label>
+</div>
+
+  <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Destino
+    </div>
+    
+    <select ng-model="destino" ng-selected="destino"   ng-options="destino.nombre for destino in destinos" >
+     
+  
+    </select>
+  </label>
+</div>
+
+ <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Vehiculo para 
+    </div>
+    
+    <select ng-model="pasajeros" >
+     
+      <option value='4' >4 Personas</option>
+      <option value='11' >11 Personas</option>
+      <option value='14' >14 Personas</option>
+      <option value='16' >16 Personas</option>
+      <option value='18' >18 Personas</option>
+      <option value='23' >23 Personas</option>
+      <option value='26' >26 Personas</option>
+      <option value='32' >32 Personas</option>
+      <option value='36' >36 Personas</option>
+      <option value='40' >40 Personas</option>
+      
+    </select>
+  </label>
+</div>
+
+ <div class="list">
+
+
+
+
+  <label class="item item-input" >
+    <span class="input-label">Fecha de salida</span>
+    <ionic-datepicker  input-obj="datepickerObject"  >
+      <button class="button button-block button-positive item"> {{fechaSalida}} </button>
+    </ionic-datepicker>
+  </label>
+ 
+
+
+
+   <label class="item item-input">
+       <span class="input-label">Hora de salida</span>
+       <ionic-timepicker etime="slots.epochTime" format="slots.format" step="slots.step" callback="timePickerCallback">
+         <button class="button button-block button-positive item">
+           
+              {{hsalida | date:'hh:mm a'}}
+           
+         </button>
+       </ionic-timepicker>
+     </label>
+     
+</div>
+
+
+
+
+
+  <center>
+  <button   ng-click="irADatos()" class="button button-outline button-positive">
+  Siguiente
+</button>
+
+</center>
+</ion-list>
+  </ion-content>
+</ion-view>

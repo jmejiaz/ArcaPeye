@@ -1,0 +1,32 @@
+<ion-view view-title="Destinos mas contratados">
+  <ion-content>
+
+
+    <ion-list ng-repeat="plan in destinos" >
+
+      
+       <div ng-click="goToBook(plan.origenId,plan.destinoId)" class="card">
+
+       <div class="item item-image">
+          <img ng-src={{plan.image}}>
+        </div>
+
+
+        
+       </div>
+
+    
+    
+  </ion-content>
+</ion-view>
+
+
+
+
+
+
+
+
+
+
+

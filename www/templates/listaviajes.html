@@ -1,0 +1,29 @@
+<ion-view view-title="Mis viajes">
+  <ion-content>
+  <ion-refresher
+    pulling-text="arrastre hacia abajo para volver a cargar..."
+    on-refresh="listaviajes()">
+  </ion-refresher>
+
+    <ion-list>
+      <ion-item ng-repeat="viaje in viajes" >
+   <div ng-click="iraviaje(viaje.id,viaje.origen,viaje.destino,viaje.placa_vehiculo,viaje.fecha_incio,viaje.fecha_fin,viaje.flag_fullTime,viaje.flag_estado,viaje.comentarios_viaje,viaje.id_usuario)">
+
+    <a class="item item-thumbnail-left" href="#">
+     
+      <h2>{{viaje.origen}}</h2>
+      <h2>{{viaje.destino}}</h2>
+      <p>salida: {{viaje.fecha_incio | date: "MM-dd-yyyy HH:mm"}}</p>
+      <p>retorno: {{viaje.fecha_fin | date: "MM-dd-yyyy HH:mm" }}</p>
+      <p>{{viaje.estado}}</p>
+      
+    </a>
+
+    
+
+</div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
