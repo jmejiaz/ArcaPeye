@@ -2,17 +2,20 @@ angular.module('ArcaUser.DatosController', [])
 
 
 
-.controller('datosUsuarioCtrl', function($scope,$q,$http,$state,$rootScope,md5,$timeout,$ionicLoading,cotizacionData) {
-
+.controller('datosUsuarioCtrl', function($scope,$q,$ionicHistory,$http,$state,$rootScope,md5,$timeout,$ionicLoading,cotizacionData) {
+ $scope.data={};
 $scope.cotizar=function(email,telefono,nombre){
-    
+    $scope.data.correo = email;
+    $scope.data.nombre = nombre;    
+    $scope.data.celular = telefono;
       var resultadoValidacion = $scope.validarFormulario($scope.data);
       if(resultadoValidacion == true){
 
           cotizacionData.cotizar(email,telefono,nombre).then(function(val){
-            if(val=="true"){
-                 $rootScope.login();
-                 alert("Gracias, nos contactaremos pronto con tigo.");
+            if(val==true){
+                 alert("Gracias, nos contactaremos pronto con tigo.");                                  
+                 $state.go("app.inicio");
+                 $ionicHistory.clearHistory();
                  return;
             }
             

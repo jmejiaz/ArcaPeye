@@ -107,7 +107,7 @@ angular.module('ArcaUser.data', [])
         console.log(query);
 
         $http.get(query).success(function(data){
-          q.resolve(data.precio);
+          q.resolve(data);
           
           
         }).error(function(err) {

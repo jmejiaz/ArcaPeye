@@ -145,53 +145,19 @@ $scope.consultartiemposervice=function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-$scope.irADatos = function(){
+$scope.irADatos = function(pasajeros,destino){
     datesalida=$scope.fechaSalidaProg;
-  
+    localStorage.setItem("pasajeros",pasajeros);
+    localStorage.setItem("destino",destino.nombre);
     var d = new Date(($scope.slots.epochTime+18000)*1000);
     datesalida.setHours($i.getHours());
     datesalida.setMinutes($i.getMinutes());
     
     
 
-/*
-   localStorage.setItem("datesalida",datesalida);   
-   localStorage.setItem("pasajeros",pasajeros);
-   localStorage.setItem("destino",destino.nombre);
-  
-      var d = new Date();
-      if(datesalida>d.getTime()){
-        
-          
-            
-            if(pasajeros!=undefined){
-               if(origen.id == 1){
-*/
-                   $state.go('app.datosUsuario');
-/*
 
-                }
-                else{
-                  alert("El origen solo puede ser desde medellin.")
-                }
-            }else{
-              alert("Debe elegir los pasajeros");
-            }
-          
-      }else{
-        alert("La fecha de salida es anterior a la actual");
-      }
-   */
+                   $state.go('app.datosUsuario');
+
 }
 
 
