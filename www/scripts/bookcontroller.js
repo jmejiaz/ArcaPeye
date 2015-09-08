@@ -155,6 +155,7 @@ $scope.irADatos = function(pasajeros,destino){
     if(datesalida<new Date()){
       alert("la fecha de salida es anterior a la actual");
     }else{
+      localStorage.setItem("datesalida",datesalida);
       $state.go('app.datosUsuario');
     }
     
