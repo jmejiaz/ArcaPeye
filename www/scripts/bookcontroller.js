@@ -5,7 +5,7 @@ angular.module('ArcaUser.BookController', [])
   var monthList = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
   var weekDaysList = ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"];
   var weekDaysListEsp = ["Domingo","Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
-
+$scope.pasajeros=4;
 
 $scope.datepickerObject = {
       titleLabel: 'Calendario',  //Optional
@@ -152,11 +152,16 @@ $scope.irADatos = function(pasajeros,destino){
     var d = new Date(($scope.slots.epochTime+18000)*1000);
     datesalida.setHours($i.getHours());
     datesalida.setMinutes($i.getMinutes());
+    if(datesalida<new Date()){
+      alert("la fecha de salida es anterior a la actual");
+    }else{
+      $state.go('app.datosUsuario');
+    }
     
     
 
 
-                   $state.go('app.datosUsuario');
+                   
 
 }
 

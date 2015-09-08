@@ -5,6 +5,12 @@ angular.module('ArcaUser.DatosController', [])
 .controller('datosUsuarioCtrl', function($scope,$q,$ionicHistory,$http,$state,$rootScope,md5,$timeout,$ionicLoading,cotizacionData) {
  $scope.data={};
 $scope.cotizar=function(email,telefono,nombre){
+  alert(email+" "+telefono+" "+nombre);
+    if(email==undefined||telefono==undefined||nombre==undefined){
+      alert("informacion incompleta o incorrecta");
+    }else{
+
+
     $scope.data.correo = email;
     $scope.data.nombre = nombre;    
     $scope.data.celular = telefono;
@@ -13,7 +19,7 @@ $scope.cotizar=function(email,telefono,nombre){
 
           cotizacionData.cotizar(email,telefono,nombre).then(function(val){
             if(val==true){
-                 alert("Gracias, nos contactaremos pronto con tigo.");                                  
+                 alert("Gracias, nos contactaremos pronto con usted.");                                  
                  $state.go("app.inicio");
                  $ionicHistory.clearHistory();
                  return;
@@ -24,7 +30,7 @@ $scope.cotizar=function(email,telefono,nombre){
             }
          });
       }
-
+}
     
  
 };
